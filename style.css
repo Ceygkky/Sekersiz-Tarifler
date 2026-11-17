@@ -1,14 +1,28 @@
+/* ===== RENKLER (tek yerden yönetilir) ===== */
+:root {
+    --zemin: #f5f0e1;
+    --adacayi: #e6e8d4;
+    --adacayi-koyu: #d5dac0;
+    --yesil: #4f5d43;
+    --yesil-koyu: #3b4733;
+    --kahve: #4a3426;
+    --kahve-soluk: #7a6a5c;
+    --cizgi: #ddd3b8;
+    --beyaz: #ffffff;
+    --golge: rgba(74, 52, 38, 0.12);
+    --golge-guclu: rgba(74, 52, 38, 0.2);
+}
 
 body {
     padding: 20px 40px;
-    background-color: #fff8f0;
-    color: #333;
+    background-color: var(--zemin);
+    color: var(--kahve);
     font-family: Arial, sans-serif;
     max-width: 1100px;
     margin: auto;
 }
 
-/* NAVBAR*/
+/* NAVBAR */
 nav {
     padding: 20px;
     display: flex;
@@ -17,11 +31,9 @@ nav {
 
 nav ul {
     display: flex;
-    /* yatay yapar menüleri ve esnek şekilde hizalar*/
-    gap: 20px;
-    /* Elemanlar arası boşluk*/
+    flex-wrap: wrap;
+    gap: 12px;
     list-style: none;
-    /* Noktaları kaldırır*/
     margin: 0;
     padding: 0;
     justify-content: center;
@@ -29,71 +41,80 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: var(--yesil-koyu);
     font-weight: 500;
-    /* yazı kalınllık için kullanılır*/
     padding: 8px 12px;
-    background-color: #f0f0f0;
+    background-color: var(--adacayi);
     border-radius: 6px;
 }
 
 nav ul li a:hover {
-    background-color: #d4caca;
+    background-color: var(--adacayi-koyu);
+}
+
+nav ul li a.aktif {
+    background-color: var(--yesil);
+    color: var(--zemin);
 }
 
 /* BAŞLIK & METİN */
 h1 {
     text-align: center;
-    font-family: 'Palatino Linotype', serif;
-    /* başlıkta kullanılcak yazı tipini belirler.*/
+    font-family: 'Palatino Linotype', Palatino, serif;
     margin-bottom: 30px;
+    color: var(--kahve);
 }
 
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 22px;
+}
 
-
-
-/* TARİF Listesi */
+/* TARİF LİSTESİ (kategori sayfaları) */
 .tarif-listesi {
     list-style: none;
     padding: 0;
     margin: 40px auto;
     max-width: 1000px;
-
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
-
     align-items: stretch;
 }
 
-/* Tarif kartı*/
+/* ANA SAYFA KARTLAR */
+.featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kartlar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* TARİF KARTI */
 .tarif-karti {
-    background-color: #fff;
+    background-color: var(--beyaz);
     padding: 16px;
     border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--golge);
     text-decoration: none;
-    color: #333;
-    width: 220px;
+    color: var(--kahve);
     display: flex;
     flex-direction: column;
     transition: all 0.25s ease;
 }
-.tarif-btn {
-    display: inline-block;
-    padding: 8px 14px;
-    background-color: #f2f2f2;
-    color: #555;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-}
+
 .tarif-karti:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 12px 22px var(--golge-guclu);
 }
 
-/* kart foto */
 .tarif-karti img {
     width: 100%;
     height: 190px;
@@ -102,7 +123,6 @@ h1 {
     margin-bottom: 12px;
 }
 
-/* kart metinler */
 .tarif-karti h3 {
     margin-top: 0;
     margin-bottom: 20px;
@@ -110,22 +130,44 @@ h1 {
 }
 
 .tarif-karti p {
-    margin: 0;
+    margin: 0 0 14px 0;
     font-size: 15px;
     line-height: 1.5;
-    color: #555;
+    color: var(--kahve-soluk);
     flex-grow: 1;
 }
 
+.tarif-btn {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 8px 14px;
+    background-color: var(--adacayi);
+    color: var(--yesil-koyu);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
 
-/* tek tarif sayfası foto */
+/* TEK TARİF SAYFASI */
+.tarif-ust {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tarif-ust p,
+.tarif-aciklama {
+    max-width: 500px;
+    margin: 15px auto;
+    color: var(--kahve-soluk);
+}
+
 .tarif-foto {
     display: block;
     max-width: 280px;
     width: 100%;
     margin: 20px auto;
     border-radius: 16px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 14px var(--golge);
 }
 
 .tarif-icerik {
@@ -133,18 +175,6 @@ h1 {
     gap: 50px;
     margin-top: 40px;
     align-items: flex-start;
-
-}
-
-.malzeme-listesi {
-    margin: 20px 0;
-    max-width: 500px;
-    padding-left: 20px;
-
-}
-
-.malzeme-listesi li {
-    margin-bottom: 6px;
 }
 
 .malzemeler,
@@ -152,10 +182,22 @@ h1 {
     flex: 1;
 }
 
+.malzemeler ul,
+.malzeme-listesi {
+    margin: 20px 0;
+    max-width: 500px;
+    padding-left: 20px;
+}
+
+.malzemeler li,
+.malzeme-listesi li {
+    margin-bottom: 6px;
+}
+
 .malzemeler h2,
 .yapilis h2 {
     margin-bottom: 15px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid var(--cizgi);
     padding-bottom: 5px;
     text-align: left;
 }
@@ -166,7 +208,7 @@ h1 {
 }
 
 .kaynak a {
-    color: #555;
+    color: var(--yesil);
     text-decoration: none;
     font-weight: 500;
 }
@@ -174,21 +216,15 @@ h1 {
 footer {
     text-align: center;
     margin-top: 60px;
-    color: #777;
+    color: var(--kahve-soluk);
     font-size: 14px;
 }
 
-.ana-sayfa-yazi {
-    max-width: 700px;
-    margin: auto;
-    text-align: center;
-    line-height: 1.6;
-}
-
+/* KAPAK (Adım 4'te yenilenecek) */
 .hero {
     text-align: center;
     padding: 50px 20px;
-    background: #fff0e6;
+    background: var(--adacayi);
     margin: 30px auto;
     border-radius: 20px;
     max-width: 700px;
@@ -198,42 +234,17 @@ footer {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background: #ff7a59;
-    color: white;
+    background: var(--yesil);
+    color: var(--zemin);
     text-decoration: none;
     border-radius: 10px;
 }
 
-h2 {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 22px;
+.hero a:hover {
+    background: var(--yesil-koyu);
 }
 
-.featured {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.kartlar {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.tarif-ust {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.tarif-aciklama {
-    max-width: 500px;
-    margin: 15px auto;
-    color: #555;
-}
-
+/* KATEGORİ KARTLARI */
 .kategori-kartlar {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -242,23 +253,20 @@ h2 {
 }
 
 .kategori-kart {
-    background: #fff6f2;
+    background: var(--beyaz);
     padding: 30px 20px;
     border-radius: 16px;
     text-decoration: none;
     display: block;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    color: var(--kahve);
+    box-shadow: 0 4px 12px var(--golge);
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .kategori-kart:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
-}
-.kategori-kart span:hover {
-    background-color: #e66447;
+    box-shadow: 0 12px 22px var(--golge-guclu);
 }
 
 .kategori-kart h3 {
@@ -267,21 +275,21 @@ h2 {
 
 .kategori-kart p {
     font-size: 14px;
-    color: #666;
+    color: var(--kahve-soluk);
     margin-bottom: 15px;
 }
 
 .tarif-link {
     display: inline-block;
     padding: 10px 18px;
-    background-color: #ff7a59;
-    color: white;
+    background-color: var(--yesil);
+    color: var(--zemin);
     border-radius: 12px;
     font-weight: 500;
 }
 
 .tarif-link:hover {
-    background-color: #e66447;
+    background-color: var(--yesil-koyu);
 }
 
 .kategori-aciklama {
@@ -289,7 +297,15 @@ h2 {
     max-width: 600px;
     margin: 0 auto 20px auto;
 }
-/* ANA SAYFA KATEGORİLER */
+
+/* ESKİ KURALLAR (Adım 7'de kullanılmıyorsa silinecek) */
+.ana-sayfa-yazi {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.6;
+}
+
 .kategori-listesi {
     list-style: none;
     display: flex;
@@ -301,10 +317,10 @@ h2 {
 }
 
 .kategori-listesi li {
-    background-color: #fff6f2;
+    background-color: var(--beyaz);
     padding: 20px 25px;
     border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 10px var(--golge);
     transition: 0.3s;
 }
 
@@ -314,6 +330,40 @@ h2 {
 
 .kategori-listesi li a {
     text-decoration: none;
-    color: #333;
+    color: var(--kahve);
     font-weight: 500;
+}
+
+/* ===== TELEFON VE TABLET ===== */
+@media (max-width: 700px) {
+    body {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .hero {
+        padding: 30px 16px;
+    }
+
+    .tarif-icerik {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tarif-karti img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 23px;
+    }
+
+    nav {
+        padding: 10px 0;
+    }
 }
