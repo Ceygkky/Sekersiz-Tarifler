@@ -222,6 +222,22 @@ footer {
     font-size: 14px;
 }
 
+.sayfa-aciklama {
+    text-align: center;
+    color: var(--kahve-soluk);
+    max-width: 520px;
+    margin: -10px auto 24px auto;
+    line-height: 1.6;
+}
+
+.tarif-sayisi {
+    text-align: center;
+    color: var(--kahve-soluk);
+    font-size: 14px;
+    margin: 0 0 24px 0;
+}
+
+
 /* ARAMA KUTUSU */
 .arama {
     display: flex;
