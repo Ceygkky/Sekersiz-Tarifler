@@ -40,6 +40,7 @@ nav ul {
 }
 
 nav ul li a {
+   display: inline-block;
     text-decoration: none;
     color: var(--yesil-koyu);
     font-weight: 500;
@@ -219,6 +220,31 @@ footer {
     color: var(--kahve-soluk);
     font-size: 14px;
 }
+
+/* ARAMA KUTUSU */
+.arama {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 30px auto;
+}
+
+.arama input {
+    width: 100%;
+    max-width: 420px;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: var(--kahve);
+    background: var(--beyaz);
+    border: 2px solid var(--cizgi);
+    border-radius: 24px;
+    outline: none;
+}
+
+.arama input:focus {
+    border-color: var(--yesil);
+}
+
+
 
 /* KAPAK (ana sayfadaki büyük karşılama kutusu) */
 .hero {
