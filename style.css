@@ -100,7 +100,8 @@ h2 {
 
 /* TARİF KARTI */
 .tarif-karti {
-    background-color: var(--beyaz);
+    background-color: #fffcf5;
+    border: 1px solid var(--cizgi);
     padding: 16px;
     border-radius: 14px;
     box-shadow: 0 4px 12px var(--golge);
