@@ -9,9 +9,9 @@ https://ceygkky.github.io/Sekersiz-Tarifler/
 
 ## 📌 Proje Hakkında
 
-Bu projede kullanıcılar farklı kategoriler altında yer alan şekersiz tarifleri inceleyebilir ve tariflerin detay sayfalarına ulaşabilir.
+Bu projede kullanıcılar 17 şekersiz tarifi kategorilere göre inceleyebilir, "Tüm tarifler" sayfasında arama yapabilir ve tariflerin detay sayfalarına ulaşabilir.
 
-Ana sayfada öne çıkan tarifler gösterilirken, kategori sayfası üzerinden farklı tarif grupları keşfedilebilir.
+Ana sayfada öne çıkan tarifler gösterilirken, kategori sayfası üzerinden farklı tarif grupları keşfedilebilir. Site telefon, tablet ve bilgisayarda düzgün görüntülenecek şekilde hazırlanmıştır.
 
 Projede bulunan bazı tarifler:
 
@@ -24,16 +24,22 @@ Projede bulunan bazı tarifler:
 - 🍰 Limonlu Kek
 - 🍇 Yulaflı Üzümlü Kurabiye
 - 🍮 Orman Meyveli Muhallebi
+- 🍌 Muzlu Rulo Pasta
+- 🥮 Taş Kadayıf
+- 🍞 Tam Buğdaylı Ekmek
 
 ---
 
 ## ✨ Özellikler
 
 - Tarifleri kategorilere göre görüntüleme
+- **Tüm tarifler sayfasında anlık arama** (JavaScript ile, yazdıkça kartlar filtrelenir)
 - Öne çıkan tarifleri ana sayfada gösterme
 - Her tarif için ayrı detay sayfası
-- Tarif görselleri
-- Basit ve anlaşılır kullanıcı arayüzü
+- Bulunulan sayfayı menüde otomatik vurgulama (JavaScript)
+- **Telefon, tablet ve bilgisayar uyumlu (responsive) tasarım**
+- CSS değişkenleriyle tek yerden yönetilen renk paleti
+- Hızlı açılması için optimize edilmiş tarif görselleri
 - GitHub Pages üzerinden canlı yayın
 
 ---
@@ -52,7 +58,7 @@ Projede tarifler farklı kategoriler altında listelenmektedir:
 ## 🛠️ Kullanılan Teknolojiler
 
 - HTML5
-- CSS3
+- CSS3 (Grid, Flexbox, CSS değişkenleri, media query)
 - JavaScript
 - Git
 - GitHub
@@ -69,6 +75,7 @@ Sekersiz-Tarifler/
 │   └── Tarif görselleri
 │
 ├── index.html
+├── tum-tarifler.html
 ├── kategoriler.html
 ├── tatlilar.html
 ├── Kek-kurabiye.html
@@ -83,6 +90,7 @@ Sekersiz-Tarifler/
 ├── limonlu-kek.html
 ├── sufle.html
 ├── şekersiz-çikolata.html
+├── ... (diğer tarif sayfaları)
 │
 ├── style.css
 ├── script.js
@@ -126,10 +134,11 @@ Bu proje ile temel web geliştirme teknolojileri kullanılarak çok sayfalı bir
 Proje geliştirilirken:
 
 - HTML sayfa yapısı oluşturma
-- CSS ile tasarım geliştirme
+- CSS ile tasarım ve mobil uyumluluk geliştirme
+- JavaScript ile arama ve menü etkileşimi ekleme
 - Sayfalar arasında bağlantı kurma
 - Görsel ve içerik yönetimi
-- Git ve GitHub kullanımı
+- Git, dal (branch) ve pull request kullanımı
 - GitHub Pages ile web sitesi yayınlama
 
 konularında pratik yapılmıştır.
@@ -138,10 +147,8 @@ konularında pratik yapılmıştır.
 
 ## 🔮 Gelecekte Eklenebilecek Özellikler
 
-- 🔎 Tarif arama sistemi
 - ❤️ Favorilere ekleme
-- 🏷️ Tarif filtreleme
-- 📱 Mobil uyumluluğun geliştirilmesi
+- 🏷️ Kategoriye göre filtreleme
 - 🌙 Dark Mode
 - ⭐ Tarif puanlama
 - ➕ Yeni tarif ekleme sistemi
